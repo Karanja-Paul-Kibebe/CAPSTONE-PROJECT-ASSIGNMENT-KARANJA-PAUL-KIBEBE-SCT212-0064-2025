@@ -24,17 +24,20 @@ function rejectCookies() {
     alert('Welcome! You rejected cookies.');
 }
 // SignUp JS
-const signUpForm = document.getElementById('signupForm');
+document.addEventListener('DOMContentLoaded', () => {
+  const signUpForm = document.getElementById('signupForm');
 
-signUpForm.addEventListener('submit', (e) => {
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
+  signUpForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
 
-  if (name && email && password) {
-    alert('Account created successfully!');
-    signUpForm.reset();
-  } else {
-    alert('Please fill in all fields.');
-  }
+    if (name && email && password) {
+      alert('Account created successfully!');
+      signUpForm.reset();
+    } else {
+      alert('Please fill in all fields.');
+    }
+  });
 });
