@@ -23,3 +23,19 @@ function rejectCookies() {
     document.getElementById('cookie-popup').style.display = 'none';
     alert('Welcome! You rejected cookies.');
 }
+// SignUp JS
+const signUpForm = document.getElementById('signupForm');
+
+signUpForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  if (name && email && password) {
+    alert('Account created successfully!');
+    signUpForm.reset();
+  } else {
+    alert('Please fill in all fields.');
+  }
+});
